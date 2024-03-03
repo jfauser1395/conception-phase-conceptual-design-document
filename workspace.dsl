@@ -8,12 +8,13 @@ workspace {
     }
 
     views {
-        systemContext softwareSystem {
+        systemContext softwareSystem "Diagram1" {
             include *
-            autoLayout
         }
     }
 
-    
+    configuration {
+        scope softwaresystem
+    }
 
 }
