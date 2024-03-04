@@ -1,17 +1,16 @@
 {
-  "configuration" : {
-    "scope" : "SoftwareSystem"
-  },
+  "configuration" : { },
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-03-03T19:51:00Z",
+  "lastModifiedDate" : "2024-03-04T22:07:10Z",
   "model" : {
     "people" : [ {
+      "description" : "A user of my software system.",
       "id" : "1",
       "location" : "Unspecified",
-      "name" : "Business User",
+      "name" : "User",
       "properties" : {
         "structurizr.dsl.identifier" : "user"
       },
@@ -20,7 +19,7 @@
         "destinationId" : "2",
         "id" : "3",
         "properties" : {
-          "structurizr.dsl.identifier" : "e44bd1f6-05b2-4464-8ae6-2d4785a48a33"
+          "structurizr.dsl.identifier" : "e7e2c821-fb76-4d91-9584-026bba459b3e"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -28,6 +27,7 @@
       "tags" : "Element,Person"
     } ],
     "softwareSystems" : [ {
+      "description" : "My software system.",
       "documentation" : { },
       "id" : "2",
       "location" : "Unspecified",
@@ -40,34 +40,53 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiQnVzaW5lc3MgVXNlciIKICAgICAgICBzb2Z0d2FyZVN5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJTb2Z0d2FyZSBTeXN0ZW0iCgogICAgICAgIHVzZXIgLT4gc29mdHdhcmVTeXN0ZW0gIlVzZXMiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgc29mdHdhcmVTeXN0ZW0gIkRpYWdyYW0xIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgIH0KICAgIH0KCiAgICBjb25maWd1cmF0aW9uIHsKICAgICAgICBzY29wZSBzb2Z0d2FyZXN5c3RlbQogICAgfQoKfQo="
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiBteSBzb2Z0d2FyZSBzeXN0ZW0uIgogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIlNvZnR3YXJlIFN5c3RlbSIgIk15IHNvZnR3YXJlIHN5c3RlbS4iCgogICAgICAgIHVzZXIgLT4gc29mdHdhcmVTeXN0ZW0gIlVzZXMiCiAgICB9CgogICAgdmlld3MgewogICAgICAgIHN5c3RlbUNvbnRleHQgc29mdHdhcmVTeXN0ZW0gIlN5c3RlbUNvbnRleHQiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgIGVsZW1lbnQgIlNvZnR3YXJlIFN5c3RlbSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMTE2OGJkCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQogICAgCn0K"
   },
   "views" : {
     "configuration" : {
       "branding" : { },
-      "lastSavedView" : "Diagram1",
+      "lastSavedView" : "SystemContext",
       "metadataSymbols" : "SquareBrackets",
-      "styles" : { },
+      "styles" : {
+        "elements" : [ {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Software System"
+        }, {
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "Person"
+        } ]
+      },
       "terminology" : { }
     },
     "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : true,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
       "dimensions" : {
-        "height" : 1748,
-        "width" : 2480
+        "height" : 1400,
+        "width" : 850
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 0,
-        "y" : 0
+        "x" : 225,
+        "y" : 199
       }, {
         "id" : "2",
-        "x" : 1015,
-        "y" : 724
+        "x" : 200,
+        "y" : 899
       } ],
       "enterpriseBoundaryVisible" : true,
-      "key" : "Diagram1",
+      "key" : "SystemContext",
       "order" : 1,
-      "paperSize" : "A5_Landscape",
       "relationships" : [ {
         "id" : "3"
       } ],

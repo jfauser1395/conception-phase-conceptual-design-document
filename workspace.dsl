@@ -1,20 +1,29 @@
 workspace {
 
     model {
-        user = person "Business User"
-        softwareSystem = softwareSystem "Software System"
+        user = person "User" "A user of my software system."
+        softwareSystem = softwareSystem "Software System" "My software system."
 
         user -> softwareSystem "Uses"
     }
 
     views {
-        systemContext softwareSystem "Diagram1" {
+        systemContext softwareSystem "SystemContext" {
             include *
+            autoLayout
+        }
+
+        styles {
+            element "Software System" {
+                background #1168bd
+                color #ffffff
+            }
+            element "Person" {
+                shape person
+                background #08427b
+                color #ffffff
+            }
         }
     }
-
-    configuration {
-        scope softwaresystem
-    }
-
+    
 }
