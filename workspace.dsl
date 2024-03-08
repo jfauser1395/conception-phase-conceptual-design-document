@@ -2,17 +2,25 @@ workspace {
 
     model {
         user = person "User" "A user of my software system."
-        softwareSystem = softwareSystem "Software System" "My software system." {
-            webapp = container "Web App"
-            db = container "Database"{
+        softwareSystem = softwareSystem "Software System" "My software system" {
+            api = container "API" {
+                tags "API"
+            }
+            db = container "Database" {
                 tags "Database"
             }
         }
+        softwareSystem01 = softwareSystem "Client" "Single Page Application" {
+            loginComponent = container "Login Form" {
+                tags "login"
+            }
 
+        }
 
         
-        user -> webapp "Uses"
-        webapp -> db "Read from and write to"
+        user -> loginComponent "Uses
+        loginComponent -> api "Uses"
+        api -> db "Read from and write to"
 
     }
 
@@ -27,10 +35,15 @@ workspace {
             
         }
 
+        systemContext softwareSystem "Diagram3" {
+            include *
+            
+        }
+
         styles {
-            element "Software System" {
+            element "Client" {
         
-                background #1168bd
+                background black
                 color #ffffff
             }
             element "Person" {
@@ -42,6 +55,10 @@ workspace {
                 shape cylinder
                 background blue
                 color white
+            }
+            element "API" {
+                background #08447b
+                color #fffffd
             }
         }
     }
