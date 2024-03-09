@@ -10,16 +10,10 @@ workspace {
                 tags "Database"
             }
         }
-        softwareSystem01 = softwareSystem "Client" "Single Page Application" {
-            loginComponent = container "Login Form" {
-                tags "login"
-            }
-
-        }
+      
 
         
-        user -> loginComponent "Uses
-        loginComponent -> api "Uses"
+        user -> api "Uses"
         api -> db "Read from and write to"
 
     }
@@ -34,18 +28,8 @@ workspace {
             include *
             
         }
-
-        systemContext softwareSystem "Diagram3" {
-            include *
-            
-        }
-
         styles {
-            element "Client" {
-        
-                background black
-                color #ffffff
-            }
+           
             element "Person" {
                 shape person
                 background #08427b
