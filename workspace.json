@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-03-09T19:40:16Z",
+  "lastModifiedDate" : "2024-03-10T14:27:34Z",
   "model" : {
     "people" : [ {
       "description" : "A user of my software system.",
@@ -16,18 +16,18 @@
       },
       "relationships" : [ {
         "description" : "Uses",
-        "destinationId" : "3",
-        "id" : "5",
+        "destinationId" : "5",
+        "id" : "6",
         "properties" : {
-          "structurizr.dsl.identifier" : "4e4db627-b471-408d-9b72-a1de9724771e"
+          "structurizr.dsl.identifier" : "f6b23647-584b-4128-b5dc-802961bdde73"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Uses",
         "destinationId" : "2",
-        "id" : "6",
-        "linkedRelationshipId" : "5",
+        "id" : "7",
+        "linkedRelationshipId" : "6",
         "sourceId" : "1"
       } ],
       "tags" : "Element,Person"
@@ -43,9 +43,9 @@
         "relationships" : [ {
           "description" : "Read from and write to",
           "destinationId" : "4",
-          "id" : "7",
+          "id" : "9",
           "properties" : {
-            "structurizr.dsl.identifier" : "ca1c4e5c-7b84-4499-93f9-71475dc3f0b8"
+            "structurizr.dsl.identifier" : "69458ff8-21d8-4fa4-ac0d-1981ecb44276"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
@@ -59,12 +59,32 @@
           "structurizr.dsl.identifier" : "db"
         },
         "tags" : "Element,Container,Database"
+      }, {
+        "description" : "Provides all of the Blogging functionality to User via their web browser.",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "Single-Page Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "singlepageapplication"
+        },
+        "relationships" : [ {
+          "description" : "Uses",
+          "destinationId" : "3",
+          "id" : "8",
+          "properties" : {
+            "structurizr.dsl.identifier" : "a02c3814-ce3c-4133-9193-c59e86951315"
+          },
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Web Browser",
+        "technology" : "TypeScript and Angular"
       } ],
-      "description" : "My software system",
+      "description" : "My Blogging",
       "documentation" : { },
       "id" : "2",
       "location" : "Unspecified",
-      "name" : "Software System",
+      "name" : "Blogging Website",
       "properties" : {
         "structurizr.dsl.identifier" : "softwaresystem"
       },
@@ -73,7 +93,7 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiBteSBzb2Z0d2FyZSBzeXN0ZW0uIgogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIlNvZnR3YXJlIFN5c3RlbSIgIk15IHNvZnR3YXJlIHN5c3RlbSIgewogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiQVBJIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRiID0gY29udGFpbmVyICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgIAoKICAgICAgICAKICAgICAgICB1c2VyIC0+IGFwaSAiVXNlcyIKICAgICAgICBhcGkgLT4gZGIgIlJlYWQgZnJvbSBhbmQgd3JpdGUgdG8iCgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IHNvZnR3YXJlU3lzdGVtICJEaWFncmFtMSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc29mdHdhcmVTeXN0ZW0gIkRpYWdyYW0yIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAKICAgICAgICB9CiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCBibHVlCiAgICAgICAgICAgICAgICBjb2xvciB3aGl0ZQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkFQSSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDg0NDdiCiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZkCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CiAgICAKfQo="
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiBteSBzb2Z0d2FyZSBzeXN0ZW0uIgogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkJsb2dnaW5nIFdlYnNpdGUiICJNeSBCbG9nZ2luZyIgewogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiQVBJIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRiID0gY29udGFpbmVyICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiA9IGNvbnRhaW5lciAiU2luZ2xlLVBhZ2UgQXBwbGljYXRpb24iICJQcm92aWRlcyBhbGwgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gVXNlciB2aWEgdGhlaXIgd2ViIGJyb3dzZXIuIiAiVHlwZVNjcmlwdCBhbmQgQW5ndWxhciIgIldlYiBCcm93c2VyIgogICAgICAgIH0KICAgICAgCgogICAgICAgIAogICAgICAgIHVzZXIgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJVc2VzIgogICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiBhcGkgIlVzZXMiCiAgICAgICAgYXBpIC0+IGRiICJSZWFkIGZyb20gYW5kIHdyaXRlIHRvIgoKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBzb2Z0d2FyZVN5c3RlbSAiRGlhZ3JhbTEiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIAogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIHNvZnR3YXJlU3lzdGVtICJEaWFncmFtMiIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgCiAgICAgICAgfQogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgY3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzQzOGRkNQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBCcm93c2VyIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CiAgICAKfQo="
   },
   "views" : {
     "configuration" : {
@@ -87,14 +107,19 @@
           "shape" : "Person",
           "tag" : "Person"
         }, {
-          "background" : "#0000ff",
+          "background" : "#1168bd",
           "color" : "#ffffff",
+          "tag" : "Software System"
+        }, {
           "shape" : "Cylinder",
           "tag" : "Database"
         }, {
-          "background" : "#08447b",
-          "color" : "#fffffd",
-          "tag" : "API"
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "tag" : "Container"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web Browser"
         } ]
       },
       "terminology" : { }
@@ -106,24 +131,30 @@
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 100,
-        "y" : 155
+        "x" : 95,
+        "y" : 0
       }, {
         "id" : "3",
-        "x" : 435,
-        "y" : 1005
+        "x" : 410,
+        "y" : 1045
       }, {
         "id" : "4",
-        "x" : 995,
-        "y" : 1410
+        "x" : 1150,
+        "y" : 1430
+      }, {
+        "id" : "5",
+        "x" : 235,
+        "y" : 540
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Diagram2",
       "order" : 2,
       "relationships" : [ {
-        "id" : "5"
+        "id" : "6"
       }, {
-        "id" : "7"
+        "id" : "8"
+      }, {
+        "id" : "9"
       } ],
       "softwareSystemId" : "2"
     } ],
@@ -146,7 +177,7 @@
       "order" : 1,
       "paperSize" : "A4_Landscape",
       "relationships" : [ {
-        "id" : "6"
+        "id" : "7"
       } ],
       "softwareSystemId" : "2"
     } ]
