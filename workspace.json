@@ -4,7 +4,7 @@
   "documentation" : { },
   "id" : 1,
   "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-03-10T14:27:34Z",
+  "lastModifiedDate" : "2024-03-13T21:46:43Z",
   "model" : {
     "people" : [ {
       "description" : "A user of my software system.",
@@ -17,18 +17,27 @@
       "relationships" : [ {
         "description" : "Uses",
         "destinationId" : "5",
-        "id" : "6",
+        "id" : "7",
         "properties" : {
-          "structurizr.dsl.identifier" : "f6b23647-584b-4128-b5dc-802961bdde73"
+          "structurizr.dsl.identifier" : "daa315d9-c3ee-40ae-a108-9a83dadbbeff"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
       }, {
         "description" : "Uses",
         "destinationId" : "2",
-        "id" : "7",
-        "linkedRelationshipId" : "6",
+        "id" : "8",
+        "linkedRelationshipId" : "7",
         "sourceId" : "1"
+      }, {
+        "description" : "Uses",
+        "destinationId" : "6",
+        "id" : "9",
+        "properties" : {
+          "structurizr.dsl.identifier" : "a6137f70-180d-437d-8c31-487a42de42fd"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship"
       } ],
       "tags" : "Element,Person"
     } ],
@@ -43,9 +52,9 @@
         "relationships" : [ {
           "description" : "Read from and write to",
           "destinationId" : "4",
-          "id" : "9",
+          "id" : "12",
           "properties" : {
-            "structurizr.dsl.identifier" : "69458ff8-21d8-4fa4-ac0d-1981ecb44276"
+            "structurizr.dsl.identifier" : "afd80eb1-2cf0-42bd-98a2-24348eeb64d4"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
@@ -70,15 +79,35 @@
         "relationships" : [ {
           "description" : "Uses",
           "destinationId" : "3",
-          "id" : "8",
+          "id" : "10",
           "properties" : {
-            "structurizr.dsl.identifier" : "a02c3814-ce3c-4133-9193-c59e86951315"
+            "structurizr.dsl.identifier" : "002f82e0-5fb3-40a1-b617-06ed831dc211"
           },
           "sourceId" : "5",
           "tags" : "Relationship"
         } ],
         "tags" : "Element,Container,Web Browser",
         "technology" : "TypeScript and Angular"
+      }, {
+        "description" : "Provides a limited subset of the Blogging functionality to customers via their mobile device.",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Mobile App as PWA",
+        "properties" : {
+          "structurizr.dsl.identifier" : "pwa"
+        },
+        "relationships" : [ {
+          "description" : "Uses",
+          "destinationId" : "3",
+          "id" : "11",
+          "properties" : {
+            "structurizr.dsl.identifier" : "0a4d70ab-0d2e-49aa-90db-94445d91be02"
+          },
+          "sourceId" : "6",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Mobile PWA",
+        "technology" : "Angular PWA Creator"
       } ],
       "description" : "My Blogging",
       "documentation" : { },
@@ -93,7 +122,7 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiBteSBzb2Z0d2FyZSBzeXN0ZW0uIgogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkJsb2dnaW5nIFdlYnNpdGUiICJNeSBCbG9nZ2luZyIgewogICAgICAgICAgICBhcGkgPSBjb250YWluZXIgIkFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiQVBJIgogICAgICAgICAgICB9CiAgICAgICAgICAgIGRiID0gY29udGFpbmVyICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiA9IGNvbnRhaW5lciAiU2luZ2xlLVBhZ2UgQXBwbGljYXRpb24iICJQcm92aWRlcyBhbGwgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gVXNlciB2aWEgdGhlaXIgd2ViIGJyb3dzZXIuIiAiVHlwZVNjcmlwdCBhbmQgQW5ndWxhciIgIldlYiBCcm93c2VyIgogICAgICAgIH0KICAgICAgCgogICAgICAgIAogICAgICAgIHVzZXIgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJVc2VzIgogICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiBhcGkgIlVzZXMiCiAgICAgICAgYXBpIC0+IGRiICJSZWFkIGZyb20gYW5kIHdyaXRlIHRvIgoKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBzb2Z0d2FyZVN5c3RlbSAiRGlhZ3JhbTEiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIAogICAgICAgIH0KCiAgICAgICAgY29udGFpbmVyIHNvZnR3YXJlU3lzdGVtICJEaWFncmFtMiIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgCiAgICAgICAgfQogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICAgZWxlbWVudCAiU29mdHdhcmUgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgc2hhcGUgY3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJDb250YWluZXIiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzQzOGRkNQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIldlYiBCcm93c2VyIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBXZWJCcm93c2VyCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICB9CiAgICAKfQo="
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiBteSBzb2Z0d2FyZSBzeXN0ZW0uIgogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkJsb2dnaW5nIFdlYnNpdGUiICJNeSBCbG9nZ2luZyIgewogICAgICAgICAgICBBUEkgPSBjb250YWluZXIgIkFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiQVBJIgogICAgICAgICAgICB9CiAgICAgICAgICAgIERCID0gY29udGFpbmVyICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiA9IGNvbnRhaW5lciAiU2luZ2xlLVBhZ2UgQXBwbGljYXRpb24iICJQcm92aWRlcyBhbGwgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gVXNlciB2aWEgdGhlaXIgd2ViIGJyb3dzZXIuIiAiVHlwZVNjcmlwdCBhbmQgQW5ndWxhciIgIldlYiBCcm93c2VyIgogICAgICAgICAgICAgUFdBID0gY29udGFpbmVyICJNb2JpbGUgQXBwIGFzIFBXQSIgIlByb3ZpZGVzIGEgbGltaXRlZCBzdWJzZXQgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gY3VzdG9tZXJzIHZpYSB0aGVpciBtb2JpbGUgZGV2aWNlLiIgIkFuZ3VsYXIgUFdBIENyZWF0b3IiICJNb2JpbGUgUFdBIgogICAgICAgIH0KICAgICAgCgogICAgICAgIAogICAgICAgIHVzZXIgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJVc2VzIgogICAgICAgIHVzZXIgLT4gUFdBICJVc2VzIgogICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiBBUEkgIlVzZXMiCiAgICAgICAgUFdBIC0+IEFQSSAiVXNlcyIKICAgICAgICBBUEkgLT4gREIgIlJlYWQgZnJvbSBhbmQgd3JpdGUgdG8iCgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IHNvZnR3YXJlU3lzdGVtICJEaWFncmFtMSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc29mdHdhcmVTeXN0ZW0gIkRpYWdyYW0yIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAKICAgICAgICB9CiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhiZAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiV2ViIEJyb3dzZXIiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJNb2JpbGUgUFdBIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VQb3J0cmFpdAogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQogICAgCn0K"
   },
   "views" : {
     "configuration" : {
@@ -120,6 +149,9 @@
         }, {
           "shape" : "WebBrowser",
           "tag" : "Web Browser"
+        }, {
+          "shape" : "MobileDevicePortrait",
+          "tag" : "Mobile PWA"
         } ]
       },
       "terminology" : { }
@@ -135,24 +167,32 @@
         "y" : 0
       }, {
         "id" : "3",
-        "x" : 410,
-        "y" : 1045
+        "x" : 325,
+        "y" : 1200
       }, {
         "id" : "4",
-        "x" : 1150,
-        "y" : 1430
+        "x" : 1100,
+        "y" : 1410
       }, {
         "id" : "5",
-        "x" : 235,
-        "y" : 540
+        "x" : 155,
+        "y" : 590
+      }, {
+        "id" : "6",
+        "x" : 1045,
+        "y" : 515
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Diagram2",
       "order" : 2,
       "relationships" : [ {
-        "id" : "6"
+        "id" : "10"
       }, {
-        "id" : "8"
+        "id" : "11"
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "7"
       }, {
         "id" : "9"
       } ],
@@ -177,7 +217,7 @@
       "order" : 1,
       "paperSize" : "A4_Landscape",
       "relationships" : [ {
-        "id" : "7"
+        "id" : "8"
       } ],
       "softwareSystemId" : "2"
     } ]

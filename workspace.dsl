@@ -3,20 +3,23 @@ workspace {
     model {
         user = person "User" "A user of my software system."
         softwareSystem = softwareSystem "Blogging Website" "My Blogging" {
-            api = container "API" {
+            API = container "API" {
                 tags "API"
             }
-            db = container "Database" {
+            DB = container "Database" {
                 tags "Database"
             }
              singlePageApplication = container "Single-Page Application" "Provides all of the Blogging functionality to User via their web browser." "TypeScript and Angular" "Web Browser"
+             PWA = container "Mobile App as PWA" "Provides a limited subset of the Blogging functionality to customers via their mobile device." "Angular PWA Creator" "Mobile PWA"
         }
       
 
         
         user -> singlePageApplication "Uses"
-        singlePageApplication -> api "Uses"
-        api -> db "Read from and write to"
+        user -> PWA "Uses"
+        singlePageApplication -> API "Uses"
+        PWA -> API "Uses"
+        API -> DB "Read from and write to"
 
     }
 
@@ -50,6 +53,9 @@ workspace {
             }
             element "Web Browser" {
                 shape WebBrowser
+            }
+            element "Mobile PWA" {
+                shape MobileDevicePortrait
             }
         }
     }
