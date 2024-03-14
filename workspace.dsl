@@ -13,21 +13,18 @@ workspace {
             api = container "API Application" "Provides Blogging functionality via a JSON/HTTPS API." "ASP.NET Core" "API"
             database = container "Database" "All data is stored in a MySql Server to process queries" "Relational database schema" "Database"
             singlePageApplication = container "Single-Page Application" "Provides all of the Blogging functionality to User via their web browser." "TypeScript and Angular" "Web Browser"
-            pwa = container "Mobile App as PWA" "Provides a limited subset of the Blogging functionality to customers via their mobile device." "Angular PWA Creator" "Mobile PWA"
+            pwa = container "Mobile App as PWA" "Provides a limited subset of the Blogging functionality to customers via their mobile device." "Angular PWA Service Worker" "Mobile PWA"
         }
       
 
         
         user -> webApplication "Visits artsblogging.com using" "HTTPS"
         user -> singlePageApplication "Viewing new content on the"
-        user -> pwa "Viewing new content on the"
         admin -> webApplication "Visits artsblogging.com to post new stuff using" "HTTPS"
         admin -> singlePageApplication "Uploading new content using the"
-        admin -> pwa "Uploading new content using the"
-        webApplication -> singlePageApplication "Uses"
-        webApplication -> PWA "Uses"
+        webApplication -> singlePageApplication "Delivers to the customer's web browser"
         singlePageApplication -> api "Makes API calls to" "JSON/HTTPS"
-        pwa -> api "Makes API calls to" "JSON/HTTPS"
+        singlePageApplication -> pwa "Allows the user to experience a mobile application"
         api -> Database "Read from and write to"
         api -> email "Sends e-mail using"
         email -> user "Sends e-mail to"
@@ -40,7 +37,7 @@ workspace {
         }
         container softwareSystem "Diagram2" {
             include *  
-            autoLayout 
+            
         }
         styles {
            
