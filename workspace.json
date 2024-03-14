@@ -3,11 +3,10 @@
   "description" : "Description",
   "documentation" : { },
   "id" : 1,
-  "lastModifiedAgent" : "structurizr-javascript",
-  "lastModifiedDate" : "2024-03-13T21:46:43Z",
+  "lastModifiedDate" : "2024-03-14T12:32:58Z",
   "model" : {
     "people" : [ {
-      "description" : "A user of my software system.",
+      "description" : "People that visit the Blog and participate.",
       "id" : "1",
       "location" : "Unspecified",
       "name" : "User",
@@ -19,7 +18,7 @@
         "destinationId" : "5",
         "id" : "7",
         "properties" : {
-          "structurizr.dsl.identifier" : "daa315d9-c3ee-40ae-a108-9a83dadbbeff"
+          "structurizr.dsl.identifier" : "eb4c5d34-57df-450c-8197-8fda3e0a40d4"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -34,7 +33,7 @@
         "destinationId" : "6",
         "id" : "9",
         "properties" : {
-          "structurizr.dsl.identifier" : "a6137f70-180d-437d-8c31-487a42de42fd"
+          "structurizr.dsl.identifier" : "c074c92a-9a3b-4d65-8790-858f9548f477"
         },
         "sourceId" : "1",
         "tags" : "Relationship"
@@ -43,9 +42,10 @@
     } ],
     "softwareSystems" : [ {
       "containers" : [ {
+        "description" : "Provides Blogging functionality via a JSON/HTTPS API.",
         "documentation" : { },
         "id" : "3",
-        "name" : "API",
+        "name" : "API Application",
         "properties" : {
           "structurizr.dsl.identifier" : "api"
         },
@@ -54,20 +54,23 @@
           "destinationId" : "4",
           "id" : "12",
           "properties" : {
-            "structurizr.dsl.identifier" : "afd80eb1-2cf0-42bd-98a2-24348eeb64d4"
+            "structurizr.dsl.identifier" : "275b2948-b5a6-4abe-8277-cb3a41e1fa6b"
           },
           "sourceId" : "3",
           "tags" : "Relationship"
         } ],
-        "tags" : "Element,Container,API"
+        "tags" : "Element,Container,API",
+        "technology" : "ASP.NET 8 Core"
       }, {
+        "description" : "All data is stored in a MySql Server to process queries",
         "documentation" : { },
         "id" : "4",
         "name" : "Database",
         "properties" : {
-          "structurizr.dsl.identifier" : "db"
+          "structurizr.dsl.identifier" : "database"
         },
-        "tags" : "Element,Container,Database"
+        "tags" : "Element,Container,Database",
+        "technology" : "Relational database schema"
       }, {
         "description" : "Provides all of the Blogging functionality to User via their web browser.",
         "documentation" : { },
@@ -77,14 +80,15 @@
           "structurizr.dsl.identifier" : "singlepageapplication"
         },
         "relationships" : [ {
-          "description" : "Uses",
+          "description" : "Makes API calls to",
           "destinationId" : "3",
           "id" : "10",
           "properties" : {
-            "structurizr.dsl.identifier" : "002f82e0-5fb3-40a1-b617-06ed831dc211"
+            "structurizr.dsl.identifier" : "9c785cbe-735f-42b4-bdd7-61e2ed7c2424"
           },
           "sourceId" : "5",
-          "tags" : "Relationship"
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
         } ],
         "tags" : "Element,Container,Web Browser",
         "technology" : "TypeScript and Angular"
@@ -97,14 +101,15 @@
           "structurizr.dsl.identifier" : "pwa"
         },
         "relationships" : [ {
-          "description" : "Uses",
+          "description" : "Makes API calls to",
           "destinationId" : "3",
           "id" : "11",
           "properties" : {
-            "structurizr.dsl.identifier" : "0a4d70ab-0d2e-49aa-90db-94445d91be02"
+            "structurizr.dsl.identifier" : "fce1a3da-c893-4843-8c80-0c6e0f940350"
           },
           "sourceId" : "6",
-          "tags" : "Relationship"
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
         } ],
         "tags" : "Element,Container,Mobile PWA",
         "technology" : "Angular PWA Creator"
@@ -122,13 +127,12 @@
   },
   "name" : "Name",
   "properties" : {
-    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIkEgdXNlciBvZiBteSBzb2Z0d2FyZSBzeXN0ZW0uIgogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkJsb2dnaW5nIFdlYnNpdGUiICJNeSBCbG9nZ2luZyIgewogICAgICAgICAgICBBUEkgPSBjb250YWluZXIgIkFQSSIgewogICAgICAgICAgICAgICAgdGFncyAiQVBJIgogICAgICAgICAgICB9CiAgICAgICAgICAgIERCID0gY29udGFpbmVyICJEYXRhYmFzZSIgewogICAgICAgICAgICAgICAgdGFncyAiRGF0YWJhc2UiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiA9IGNvbnRhaW5lciAiU2luZ2xlLVBhZ2UgQXBwbGljYXRpb24iICJQcm92aWRlcyBhbGwgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gVXNlciB2aWEgdGhlaXIgd2ViIGJyb3dzZXIuIiAiVHlwZVNjcmlwdCBhbmQgQW5ndWxhciIgIldlYiBCcm93c2VyIgogICAgICAgICAgICAgUFdBID0gY29udGFpbmVyICJNb2JpbGUgQXBwIGFzIFBXQSIgIlByb3ZpZGVzIGEgbGltaXRlZCBzdWJzZXQgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gY3VzdG9tZXJzIHZpYSB0aGVpciBtb2JpbGUgZGV2aWNlLiIgIkFuZ3VsYXIgUFdBIENyZWF0b3IiICJNb2JpbGUgUFdBIgogICAgICAgIH0KICAgICAgCgogICAgICAgIAogICAgICAgIHVzZXIgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJVc2VzIgogICAgICAgIHVzZXIgLT4gUFdBICJVc2VzIgogICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiBBUEkgIlVzZXMiCiAgICAgICAgUFdBIC0+IEFQSSAiVXNlcyIKICAgICAgICBBUEkgLT4gREIgIlJlYWQgZnJvbSBhbmQgd3JpdGUgdG8iCgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IHNvZnR3YXJlU3lzdGVtICJEaWFncmFtMSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc29mdHdhcmVTeXN0ZW0gIkRpYWdyYW0yIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAKICAgICAgICB9CiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhiZAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiV2ViIEJyb3dzZXIiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJNb2JpbGUgUFdBIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VQb3J0cmFpdAogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQogICAgCn0K"
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIlBlb3BsZSB0aGF0IHZpc2l0IHRoZSBCbG9nIGFuZCBwYXJ0aWNpcGF0ZS4iIAogICAgICAgIHNvZnR3YXJlU3lzdGVtID0gc29mdHdhcmVTeXN0ZW0gIkJsb2dnaW5nIFdlYnNpdGUiICJNeSBCbG9nZ2luZyIgewogICAgICAgICAgICBBUEkgPSBjb250YWluZXIgIkFQSSBBcHBsaWNhdGlvbiIgIlByb3ZpZGVzIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdmlhIGEgSlNPTi9IVFRQUyBBUEkuIiAiQVNQLk5FVCA4IENvcmUiICJBUEkiCiAgICAgICAgICAgIERhdGFiYXNlID0gY29udGFpbmVyICJEYXRhYmFzZSIgIkFsbCBkYXRhIGlzIHN0b3JlZCBpbiBhIE15U3FsIFNlcnZlciB0byBwcm9jZXNzIHF1ZXJpZXMiICJSZWxhdGlvbmFsIGRhdGFiYXNlIHNjaGVtYSIgIkRhdGFiYXNlIgogICAgICAgICAgICBzaW5nbGVQYWdlQXBwbGljYXRpb24gPSBjb250YWluZXIgIlNpbmdsZS1QYWdlIEFwcGxpY2F0aW9uIiAiUHJvdmlkZXMgYWxsIG9mIHRoZSBCbG9nZ2luZyBmdW5jdGlvbmFsaXR5IHRvIFVzZXIgdmlhIHRoZWlyIHdlYiBicm93c2VyLiIgIlR5cGVTY3JpcHQgYW5kIEFuZ3VsYXIiICJXZWIgQnJvd3NlciIKICAgICAgICAgICAgUFdBID0gY29udGFpbmVyICJNb2JpbGUgQXBwIGFzIFBXQSIgIlByb3ZpZGVzIGEgbGltaXRlZCBzdWJzZXQgb2YgdGhlIEJsb2dnaW5nIGZ1bmN0aW9uYWxpdHkgdG8gY3VzdG9tZXJzIHZpYSB0aGVpciBtb2JpbGUgZGV2aWNlLiIgIkFuZ3VsYXIgUFdBIENyZWF0b3IiICJNb2JpbGUgUFdBIgogICAgICAgIH0KICAgICAgCgogICAgICAgIAogICAgICAgIHVzZXIgLT4gc2luZ2xlUGFnZUFwcGxpY2F0aW9uICJVc2VzIgogICAgICAgIHVzZXIgLT4gUFdBICJVc2VzIgogICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiBBUEkgIk1ha2VzIEFQSSBjYWxscyB0byIgIkpTT04vSFRUUFMiCiAgICAgICAgUFdBIC0+IEFQSSAiTWFrZXMgQVBJIGNhbGxzIHRvIiAiSlNPTi9IVFRQUyIKICAgICAgICBBUEkgLT4gRGF0YWJhc2UgIlJlYWQgZnJvbSBhbmQgd3JpdGUgdG8iCgogICAgfQoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1Db250ZXh0IHNvZnR3YXJlU3lzdGVtICJEaWFncmFtMSIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICBjb250YWluZXIgc29mdHdhcmVTeXN0ZW0gIkRpYWdyYW0yIiB7CiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICAKICAgICAgICB9CiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAKICAgICAgICAgICAgZWxlbWVudCAiUGVyc29uIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhiZAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiV2ViIEJyb3dzZXIiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJNb2JpbGUgUFdBIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VQb3J0cmFpdAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkFQSSIgewogICAgICAgICAgICAgICAgc2hhcGUgcm91bmRlZGJveAogICAgICAgICAgICB9CiAgICAgICAgfQogICAgfQogICAgCn0K"
   },
   "views" : {
     "configuration" : {
       "branding" : { },
       "lastSavedView" : "Diagram2",
-      "metadataSymbols" : "SquareBrackets",
       "styles" : {
         "elements" : [ {
           "background" : "#08427b",
@@ -152,39 +156,43 @@
         }, {
           "shape" : "MobileDevicePortrait",
           "tag" : "Mobile PWA"
+        }, {
+          "shape" : "RoundedBox",
+          "tag" : "API"
         } ]
       },
       "terminology" : { }
     },
     "containerViews" : [ {
       "dimensions" : {
-        "height" : 2016,
-        "width" : 1705
+        "height" : 2480,
+        "width" : 3508
       },
       "elements" : [ {
         "id" : "1",
-        "x" : 95,
-        "y" : 0
+        "x" : 230,
+        "y" : 680
       }, {
         "id" : "3",
-        "x" : 325,
-        "y" : 1200
+        "x" : 1100,
+        "y" : 1560
       }, {
         "id" : "4",
-        "x" : 1100,
-        "y" : 1410
+        "x" : 1050,
+        "y" : 2000
       }, {
         "id" : "5",
-        "x" : 155,
-        "y" : 590
+        "x" : 1220,
+        "y" : 495
       }, {
         "id" : "6",
-        "x" : 1045,
-        "y" : 515
+        "x" : 925,
+        "y" : 950
       } ],
       "externalSoftwareSystemBoundariesVisible" : false,
       "key" : "Diagram2",
       "order" : 2,
+      "paperSize" : "A4_Landscape",
       "relationships" : [ {
         "id" : "10"
       }, {
@@ -200,8 +208,8 @@
     } ],
     "systemContextViews" : [ {
       "dimensions" : {
-        "height" : 2480,
-        "width" : 3508
+        "height" : 1748,
+        "width" : 2480
       },
       "elements" : [ {
         "id" : "1",
@@ -209,13 +217,13 @@
         "y" : 0
       }, {
         "id" : "2",
-        "x" : 1800,
-        "y" : 1385
+        "x" : 1015,
+        "y" : 724
       } ],
       "enterpriseBoundaryVisible" : true,
       "key" : "Diagram1",
       "order" : 1,
-      "paperSize" : "A4_Landscape",
+      "paperSize" : "A5_Landscape",
       "relationships" : [ {
         "id" : "8"
       } ],

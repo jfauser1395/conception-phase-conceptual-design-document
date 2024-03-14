@@ -1,25 +1,21 @@
 workspace {
 
     model {
-        user = person "User" "A user of my software system."
+        user = person "User" "People that visit the Blog and participate." 
         softwareSystem = softwareSystem "Blogging Website" "My Blogging" {
-            API = container "API" {
-                tags "API"
-            }
-            DB = container "Database" {
-                tags "Database"
-            }
-             singlePageApplication = container "Single-Page Application" "Provides all of the Blogging functionality to User via their web browser." "TypeScript and Angular" "Web Browser"
-             PWA = container "Mobile App as PWA" "Provides a limited subset of the Blogging functionality to customers via their mobile device." "Angular PWA Creator" "Mobile PWA"
+            API = container "API Application" "Provides Blogging functionality via a JSON/HTTPS API." "ASP.NET 8 Core" "API"
+            Database = container "Database" "All data is stored in a MySql Server to process queries" "Relational database schema" "Database"
+            singlePageApplication = container "Single-Page Application" "Provides all of the Blogging functionality to User via their web browser." "TypeScript and Angular" "Web Browser"
+            PWA = container "Mobile App as PWA" "Provides a limited subset of the Blogging functionality to customers via their mobile device." "Angular PWA Creator" "Mobile PWA"
         }
       
 
         
         user -> singlePageApplication "Uses"
         user -> PWA "Uses"
-        singlePageApplication -> API "Uses"
-        PWA -> API "Uses"
-        API -> DB "Read from and write to"
+        singlePageApplication -> API "Makes API calls to" "JSON/HTTPS"
+        PWA -> API "Makes API calls to" "JSON/HTTPS"
+        API -> Database "Read from and write to"
 
     }
 
@@ -56,6 +52,9 @@ workspace {
             }
             element "Mobile PWA" {
                 shape MobileDevicePortrait
+            }
+            element "API" {
+                shape roundedbox
             }
         }
     }
