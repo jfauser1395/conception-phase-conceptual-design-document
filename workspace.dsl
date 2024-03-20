@@ -19,9 +19,7 @@ workspace {
 
         
         user -> webApplication "Visits artsblogging.com using" "HTTPS"
-        
         admin -> webApplication "Visits artsblogging.com to post new stuff using" "HTTPS"
-        
         webApplication -> singlePageApplication "Delivers to the customer's web browser"
         singlePageApplication -> api "Makes API calls to" "JSON/HTTPS"
         singlePageApplication -> pwa "Allows the user to experience a mobile application"
