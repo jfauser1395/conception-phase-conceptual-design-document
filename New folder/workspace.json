@@ -1,0 +1,344 @@
+{
+  "configuration" : { },
+  "description" : "Description",
+  "documentation" : { },
+  "id" : 1,
+  "lastModifiedAgent" : "structurizr-javascript",
+  "lastModifiedDate" : "2024-06-03T20:24:55Z",
+  "model" : {
+    "people" : [ {
+      "description" : "People that are visiting and participating on the Blog.",
+      "id" : "1",
+      "location" : "Unspecified",
+      "name" : "User",
+      "properties" : {
+        "structurizr.dsl.identifier" : "user"
+      },
+      "relationships" : [ {
+        "description" : "Visits spaceofthougsts.com using",
+        "destinationId" : "4",
+        "id" : "10",
+        "properties" : {
+          "structurizr.dsl.identifier" : "4719dcfc-c94b-4d84-9ac1-46cf2bf03940"
+        },
+        "sourceId" : "1",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      }, {
+        "description" : "Visits spaceofthougsts.com using",
+        "destinationId" : "3",
+        "id" : "11",
+        "linkedRelationshipId" : "10",
+        "sourceId" : "1",
+        "technology" : "HTTPS"
+      } ],
+      "tags" : "Element,Person,user"
+    }, {
+      "description" : "Administrator is uploading new content on the Blog",
+      "id" : "2",
+      "location" : "Unspecified",
+      "name" : "Administrator",
+      "properties" : {
+        "structurizr.dsl.identifier" : "admin"
+      },
+      "relationships" : [ {
+        "description" : "Visits spaceofthougsts.com to post new stuff using",
+        "destinationId" : "4",
+        "id" : "12",
+        "properties" : {
+          "structurizr.dsl.identifier" : "1526bef9-2ba5-463d-9b05-61eaae590444"
+        },
+        "sourceId" : "2",
+        "tags" : "Relationship",
+        "technology" : "HTTPS"
+      }, {
+        "description" : "Visits spaceofthougsts.com to post new stuff using",
+        "destinationId" : "3",
+        "id" : "13",
+        "linkedRelationshipId" : "12",
+        "sourceId" : "2",
+        "technology" : "HTTPS"
+      } ],
+      "tags" : "Element,Person,admin"
+    } ],
+    "softwareSystems" : [ {
+      "containers" : [ {
+        "description" : "Delivers the static content and Blogging single page application",
+        "documentation" : { },
+        "id" : "4",
+        "name" : "Web Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "webapplication"
+        },
+        "relationships" : [ {
+          "description" : "Delivers to the customer's web browser",
+          "destinationId" : "7",
+          "id" : "14",
+          "properties" : {
+            "structurizr.dsl.identifier" : "9a32b479-4185-41ef-b5eb-e5e55322cece"
+          },
+          "sourceId" : "4",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "ASP.NET Core Web Server"
+      }, {
+        "description" : "Provides functionalities for CRUD operations via a RUST API.",
+        "documentation" : { },
+        "id" : "5",
+        "name" : "API Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "api"
+        },
+        "relationships" : [ {
+          "description" : "Read from and write to",
+          "destinationId" : "6",
+          "id" : "17",
+          "properties" : {
+            "structurizr.dsl.identifier" : "764f90d0-cf5b-4255-b8c6-9edc47199a84"
+          },
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        }, {
+          "description" : "Sends e-mail using",
+          "destinationId" : "9",
+          "id" : "18",
+          "properties" : {
+            "structurizr.dsl.identifier" : "d5557442-8241-4817-b76c-72878dfd6fab"
+          },
+          "sourceId" : "5",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,API",
+        "technology" : "ASP.NET Core 8 & Entity Framework"
+      }, {
+        "description" : "All data is stored in a MySql Server to process queries.",
+        "documentation" : { },
+        "id" : "6",
+        "name" : "Database",
+        "properties" : {
+          "structurizr.dsl.identifier" : "database"
+        },
+        "tags" : "Element,Container,Database",
+        "technology" : "Relational database schema (many-to-many relation)"
+      }, {
+        "description" : "Provides all of the Blogging functionality to User via their web browser.",
+        "documentation" : { },
+        "id" : "7",
+        "name" : "Single-Page Application",
+        "properties" : {
+          "structurizr.dsl.identifier" : "singlepageapplication"
+        },
+        "relationships" : [ {
+          "description" : "Makes API calls to",
+          "destinationId" : "5",
+          "id" : "15",
+          "properties" : {
+            "structurizr.dsl.identifier" : "f6637170-2566-457c-ac8b-3c0be6fb7ac6"
+          },
+          "sourceId" : "7",
+          "tags" : "Relationship",
+          "technology" : "JSON/HTTPS"
+        }, {
+          "description" : "Allows the user to experience a mobile application",
+          "destinationId" : "8",
+          "id" : "16",
+          "properties" : {
+            "structurizr.dsl.identifier" : "0fb01c3a-29e0-4b8a-87c3-118e200200ad"
+          },
+          "sourceId" : "7",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container,Web Browser",
+        "technology" : "TypeScript and Angular"
+      }, {
+        "description" : "Provides a limited subset of the Blogging functionalities to visiters via their mobile device.",
+        "documentation" : { },
+        "id" : "8",
+        "name" : "Mobile App as PWA",
+        "properties" : {
+          "structurizr.dsl.identifier" : "pwa"
+        },
+        "tags" : "Element,Container,Mobile PWA",
+        "technology" : "Angular PWA Service Worker"
+      }, {
+        "description" : "Internal e-mail system.",
+        "documentation" : { },
+        "id" : "9",
+        "name" : "E-mail System",
+        "properties" : {
+          "structurizr.dsl.identifier" : "email"
+        },
+        "relationships" : [ {
+          "description" : "Sends e-mail newsletter to subsciber",
+          "destinationId" : "1",
+          "id" : "19",
+          "properties" : {
+            "structurizr.dsl.identifier" : "2d95e9a9-5c5a-4be1-a8d2-5549295acdb9"
+          },
+          "sourceId" : "9",
+          "tags" : "Relationship"
+        } ],
+        "tags" : "Element,Container",
+        "technology" : "email"
+      } ],
+      "description" : "My Blogging",
+      "documentation" : { },
+      "id" : "3",
+      "location" : "Unspecified",
+      "name" : "Blogging Website",
+      "properties" : {
+        "structurizr.dsl.identifier" : "softwaresystem"
+      },
+      "relationships" : [ {
+        "description" : "Sends e-mail newsletter to subsciber",
+        "destinationId" : "1",
+        "id" : "20",
+        "linkedRelationshipId" : "19",
+        "sourceId" : "3"
+      } ],
+      "tags" : "Element,Software System"
+    } ]
+  },
+  "name" : "Name",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICBtb2RlbCB7CiAgICAgICAgdXNlciA9IHBlcnNvbiAiVXNlciIgIlBlb3BsZSB0aGF0IGFyZSB2aXNpdGluZyBhbmQgcGFydGljaXBhdGluZyBvbiB0aGUgQmxvZy4iICJ1c2VyIgogICAgICAgIGFkbWluID0gcGVyc29uICJBZG1pbmlzdHJhdG9yIiAiQWRtaW5pc3RyYXRvciBpcyB1cGxvYWRpbmcgbmV3IGNvbnRlbnQgb24gdGhlIEJsb2ciICJhZG1pbiIKCiAgICAgICAgc29mdHdhcmVTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAiQmxvZ2dpbmcgV2Vic2l0ZSIgIk15IEJsb2dnaW5nIiB7CiAgICAgICAgICAgIFdlYkFwcGxpY2F0aW9uID0gY29udGFpbmVyICJXZWIgQXBwbGljYXRpb24iICJEZWxpdmVycyB0aGUgc3RhdGljIGNvbnRlbnQgYW5kIEJsb2dnaW5nIHNpbmdsZSBwYWdlIGFwcGxpY2F0aW9uIiAiQVNQLk5FVCBDb3JlIFdlYiBTZXJ2ZXIiICIKICAgICAgICAgICAgYXBpID0gY29udGFpbmVyICJBUEkgQXBwbGljYXRpb24iICJQcm92aWRlcyBmdW5jdGlvbmFsaXRpZXMgZm9yIENSVUQgb3BlcmF0aW9ucyB2aWEgYSBSVVNUIEFQSS4iICJBU1AuTkVUIENvcmUgOCAmIEVudGl0eSBGcmFtZXdvcmsiICJBUEkiCiAgICAgICAgICAgIGRhdGFiYXNlID0gY29udGFpbmVyICJEYXRhYmFzZSIgIkFsbCBkYXRhIGlzIHN0b3JlZCBpbiBhIE15U3FsIFNlcnZlciB0byBwcm9jZXNzIHF1ZXJpZXMuIiAiUmVsYXRpb25hbCBkYXRhYmFzZSBzY2hlbWEgKG1hbnktdG8tbWFueSByZWxhdGlvbikiICJEYXRhYmFzZSIKICAgICAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uID0gY29udGFpbmVyICJTaW5nbGUtUGFnZSBBcHBsaWNhdGlvbiIgIlByb3ZpZGVzIGFsbCBvZiB0aGUgQmxvZ2dpbmcgZnVuY3Rpb25hbGl0eSB0byBVc2VyIHZpYSB0aGVpciB3ZWIgYnJvd3Nlci4iICJUeXBlU2NyaXB0IGFuZCBBbmd1bGFyIiAiV2ViIEJyb3dzZXIiCiAgICAgICAgICAgIHB3YSA9IGNvbnRhaW5lciAiTW9iaWxlIEFwcCBhcyBQV0EiICJQcm92aWRlcyBhIGxpbWl0ZWQgc3Vic2V0IG9mIHRoZSBCbG9nZ2luZyBmdW5jdGlvbmFsaXRpZXMgdG8gdmlzaXRlcnMgdmlhIHRoZWlyIG1vYmlsZSBkZXZpY2UuIiAiQW5ndWxhciBQV0EgU2VydmljZSBXb3JrZXIiICJNb2JpbGUgUFdBIgogICAgICAgICAgICBlbWFpbCA9IGNvbnRhaW5lciAiRS1tYWlsIFN5c3RlbSIgIkludGVybmFsIGUtbWFpbCBzeXN0ZW0uIiAiZW1haWwiCiAgICAgICAgfQogICAgICAKCiAgICAgICAgCiAgICAgICAgdXNlciAtPiB3ZWJBcHBsaWNhdGlvbiAiVmlzaXRzIHNwYWNlb2Z0aG91Z3N0cy5jb20gdXNpbmciICJIVFRQUyIKICAgICAgICBhZG1pbiAtPiB3ZWJBcHBsaWNhdGlvbiAiVmlzaXRzIHNwYWNlb2Z0aG91Z3N0cy5jb20gdG8gcG9zdCBuZXcgc3R1ZmYgdXNpbmciICJIVFRQUyIKICAgICAgICB3ZWJBcHBsaWNhdGlvbiAtPiBzaW5nbGVQYWdlQXBwbGljYXRpb24gIkRlbGl2ZXJzIHRvIHRoZSBjdXN0b21lcidzIHdlYiBicm93c2VyIgogICAgICAgIHNpbmdsZVBhZ2VBcHBsaWNhdGlvbiAtPiBhcGkgIk1ha2VzIEFQSSBjYWxscyB0byIgIkpTT04vSFRUUFMiCiAgICAgICAgc2luZ2xlUGFnZUFwcGxpY2F0aW9uIC0+IHB3YSAiQWxsb3dzIHRoZSB1c2VyIHRvIGV4cGVyaWVuY2UgYSBtb2JpbGUgYXBwbGljYXRpb24iCiAgICAgICAgYXBpIC0+IERhdGFiYXNlICJSZWFkIGZyb20gYW5kIHdyaXRlIHRvIgogICAgICAgIGFwaSAtPiBlbWFpbCAiU2VuZHMgZS1tYWlsIHVzaW5nIgogICAgICAgIGVtYWlsIC0+IHVzZXIgIlNlbmRzIGUtbWFpbCBuZXdzbGV0dGVyIHRvIHN1YnNjaWJlciIKICAgIH0KCiAgICB2aWV3cyB7CiAgICAgICAgc3lzdGVtQ29udGV4dCBzb2Z0d2FyZVN5c3RlbSAiRGlhZ3JhbTEiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQgICAgCiAgICAgICAgfQogICAgICAgIGNvbnRhaW5lciBzb2Z0d2FyZVN5c3RlbSAiRGlhZ3JhbTIiIHsKICAgICAgICAgICAgaW5jbHVkZSAqICAKICAgICAgICAgICAgCiAgICAgICAgfQogICAgICAgIHN0eWxlcyB7CiAgICAgICAgICAgCiAgICAgICAgICAgIGVsZW1lbnQgImFkbWluIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBwZXJzb24KICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzA4NDI3YgogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgInVzZXIiIHsKICAgICAgICAgICAgICAgIHNoYXBlIHBlcnNvbgogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjOTk5OTk5CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgICBlbGVtZW50ICJTb2Z0d2FyZSBTeXN0ZW0iIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzExNjhiZAogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBjeWxpbmRlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkNvbnRhaW5lciIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjNDM4ZGQ1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgICAgICBzaGFwZSByb3VuZGVkYm94CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiV2ViIEJyb3dzZXIiIHsKICAgICAgICAgICAgICAgIHNoYXBlIFdlYkJyb3dzZXIKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJNb2JpbGUgUFdBIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBNb2JpbGVEZXZpY2VQb3J0cmFpdAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgImVtYWlsIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMxMTY4YmQKICAgICAgICAgICAgfQogICAgICAgICAgICAKICAgICAgICB9CiAgICB9CiAgICAKfQo="
+  },
+  "views" : {
+    "configuration" : {
+      "branding" : { },
+      "lastSavedView" : "Diagram2",
+      "metadataSymbols" : "SquareBrackets",
+      "styles" : {
+        "elements" : [ {
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person",
+          "tag" : "admin"
+        }, {
+          "background" : "#999999",
+          "shape" : "Person",
+          "tag" : "user"
+        }, {
+          "background" : "#1168bd",
+          "color" : "#ffffff",
+          "tag" : "Software System"
+        }, {
+          "shape" : "Cylinder",
+          "tag" : "Database"
+        }, {
+          "background" : "#438dd5",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox",
+          "tag" : "Container"
+        }, {
+          "shape" : "WebBrowser",
+          "tag" : "Web Browser"
+        }, {
+          "shape" : "MobileDevicePortrait",
+          "tag" : "Mobile PWA"
+        }, {
+          "background" : "#1168bd",
+          "tag" : "email"
+        } ]
+      },
+      "terminology" : { }
+    },
+    "containerViews" : [ {
+      "dimensions" : {
+        "height" : 3508,
+        "width" : 2480
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 335,
+        "y" : 225
+      }, {
+        "id" : "2",
+        "x" : 1750,
+        "y" : 225
+      }, {
+        "id" : "4",
+        "x" : 1015,
+        "y" : 895
+      }, {
+        "id" : "5",
+        "x" : 1490,
+        "y" : 2340
+      }, {
+        "id" : "6",
+        "x" : 1495,
+        "y" : 3000
+      }, {
+        "id" : "7",
+        "x" : 685,
+        "y" : 1660
+      }, {
+        "id" : "8",
+        "x" : 1875,
+        "y" : 1570
+      }, {
+        "id" : "9",
+        "x" : 305,
+        "y" : 2340
+      } ],
+      "externalSoftwareSystemBoundariesVisible" : false,
+      "key" : "Diagram2",
+      "order" : 2,
+      "paperSize" : "A4_Portrait",
+      "relationships" : [ {
+        "id" : "10"
+      }, {
+        "id" : "12"
+      }, {
+        "id" : "14"
+      }, {
+        "id" : "15"
+      }, {
+        "id" : "16"
+      }, {
+        "id" : "17"
+      }, {
+        "id" : "18"
+      }, {
+        "id" : "19"
+      } ],
+      "softwareSystemId" : "3"
+    } ],
+    "systemContextViews" : [ {
+      "automaticLayout" : {
+        "applied" : false,
+        "edgeSeparation" : 0,
+        "implementation" : "Graphviz",
+        "nodeSeparation" : 300,
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "vertices" : false
+      },
+      "elements" : [ {
+        "id" : "1",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "2",
+        "x" : 0,
+        "y" : 0
+      }, {
+        "id" : "3",
+        "x" : 0,
+        "y" : 0
+      } ],
+      "enterpriseBoundaryVisible" : true,
+      "key" : "Diagram1",
+      "order" : 1,
+      "relationships" : [ {
+        "id" : "11"
+      }, {
+        "id" : "13"
+      }, {
+        "id" : "20"
+      } ],
+      "softwareSystemId" : "3"
+    } ]
+  }
+}
