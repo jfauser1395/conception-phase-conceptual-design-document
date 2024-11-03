@@ -5,30 +5,30 @@ workspace {
         admin = person "Administrator" "Administrator is uploading new content on the Blog" "admin"
 
         softwareSystem = softwareSystem "Blogging Website" "My Blogging" {
-            WebApplication = container "Web Application" "Delivers the static content and Blogging single page application" "ASP.NET Core Web Server" "
-            api = container "API Application" "Provides functionalities for CRUD operations via a RUST API." "ASP.NET Core 8 & Entity Framework" "API"
+            WebApplication = container "Web Application" "Delivers static and dynamic content via a single page application" "ASP.NET Core Web API & Angular UI" "
+            api = container "API Application" "Provides functionalities to execute CRUD operations via a REST API." "ASP.NET Core 8 & Entity Framework" "API"
             database = container "Database" "All data is stored in a MySql Server to process queries." "Relational database schema (many-to-many relation)" "Database"
-            singlePageApplication = container "Single-Page Application" "Provides all of the Blogging functionality to User via their web browser." "TypeScript and Angular" "Web Browser"
-            pwa = container "Mobile App as PWA" "Provides a limited subset of the Blogging functionalities to visiters via their mobile device." "Angular PWA Service Worker" "Mobile PWA"
-            email = container "E-mail System" "Internal e-mail system." "email"
+            singlePageApplication = container "Single-Page Application" "Provides all blogging functionality to users via their web browser." "TypeScript and Angular" "Web Browser"
+            pwa = container "Mobile App as PWA" "Provides all functionalities on a mobile device without the use of an appstore." "Angular PWA Service Worker" "Mobile PWA"
+           
         }
       
 
         
         user -> webApplication "Visits spaceofthougsts.com using" "HTTPS"
-        admin -> webApplication "Visits spaceofthougsts.com to post new stuff using" "HTTPS"
-        webApplication -> singlePageApplication "Delivers to the customer's web browser"
+        admin -> webApplication "Visits spaceofthougsts.com to upload, edit and monitor content using" "HTTPS"
+        webApplication -> singlePageApplication "Delivers to user's web browser"
         singlePageApplication -> api "Makes API calls to" "JSON/HTTPS"
         singlePageApplication -> pwa "Allows the user to experience a mobile application"
-        api -> Database "Read from and write to"
-        api -> email "Sends e-mail using"
-        email -> user "Sends e-mail newsletter to subsciber"
+        api -> Database "Reads from and writes to"
+       
+       
     }
 
     views {
         systemContext softwareSystem "Diagram1" {
             include *
-            autoLayout    
+            autoLayout 
         }
         container softwareSystem "Diagram2" {
             include *  
@@ -64,10 +64,6 @@ workspace {
             element "Mobile PWA" {
                 shape MobileDevicePortrait
             }
-            element "email" {
-                background #1168bd
-            }
-            
         }
     }
     
